@@ -1,0 +1,47 @@
+Curl Commands 
+
+Get all Tasks
+GET
+-curl http://localhost:3000/api/v1/tasks
+
+-
+
+Create a task
+POST 
+{
+    "name":"shakenbake",
+     "completed": "true"
+}
+curl --header "Content-Type: application/json" -d "{\"name\":\"testing\"}" http://localhost:3000/api/v1/tasks
+curl --header "Content-Type: application/json" -d "{\"name\":\"shakenbake\",\"completed\": \"true\"}" http://localhost:3000/api/v1/tasks
+curl --header "Content-Type: application/json" -d "{\"name\":\"second taskwwwwwwwwwwwwwwwwwwwwwwwwwww\",\"completed\": \"false\"}" http://localhost:3000/api/v1/tasks
+curl --header "Content-Type: application/json" -d "{}" http://localhost:3000/api/v1/tasks
+
+Get Single Task by ID
+GET
+DB not set up so any text will work for now because we're using params
+curl http://localhost:3000/api/v1/tasks/hello
+curl http://localhost:3000/api/v1/tasks/62eaae2b9e9aaf26004ce8ca
+curl http://localhost:3000/api/v1/tasks/62eaae2b9e9aaf26004ce8c0
+
+update task
+PATCH 
+curl --request PATCH http://localhost:3000/api/v1/tasks/62e93d3d6105684234b38f10 --header "Content-Type: application/json" -d "{\"name\":\"update testing e\",\"completed\": \"false\"}"
+
+
+
+
+delete task
+curl --request DELETE http://localhost:3000/api/v1/tasks/62e93e236105684234b38f14
+curl -X DELETE <URL>
+
+
+Representational
+State
+Transfer
+Application
+Programming
+Interface
+
+Put vs Patch
+- Put replaces the existing resource, patch is a partial update. With patch only passed in properties are update while put updates everything setting all tasks to completed = false  
