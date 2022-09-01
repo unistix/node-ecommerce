@@ -1,9 +1,13 @@
 Curl Commands 
 
-Get all Tasks
+Get all Products
 GET
--curl http://localhost:3000/api/v1/tasks
+-curl http://localhost:3000/api/v1/products
 
+
+Get all Products Static
+GET
+curl http://localhost:3000/api/v1/products/static
 -
 
 Create a task
