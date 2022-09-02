@@ -5,6 +5,6 @@ const{getAllProducts, getAllProductsStatic, getAllProductsFeatured} = require('.
 
 router.route('/').get(getAllProducts)
 router.route('/static').get(getAllProductsStatic)
-router.route('/featured').get(getAllProductsFeatured)
+//router.route('/featured').get(getAllProductsFeatured)
 
 module.exports = router

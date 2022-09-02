@@ -2,13 +2,40 @@ Curl Commands
 
 Get all Products
 GET
--curl http://localhost:3000/api/v1/products
+curl http://localhost:3000/api/v1/products
 
 
 Get all Products Static
 GET
 curl http://localhost:3000/api/v1/products/static
--
+
+
+
+Query example
+curl "http://localhost:3000/api/v1/products/?name=e&featured=false&company=ikea"
+
+Query for product (Dynamic Filtering)
+curl "http://localhost:3000/api/v1/products/?name=aa"
+
+Query for sorted product (Dynamic Filtering)
+curl "http://localhost:3000/api/v1/products/?sort=name"
+curl "http://localhost:3000/api/v1/products/?sort=-name" Reverse
+curl "http://localhost:3000/api/v1/products/?sort=name,price" Multiple sorted values
+
+Query only certain fields
+curl "http://localhost:3000/api/v1/products/?sort=name&fields=name,price"
+
+
+Query with limit
+curl "http://localhost:3000/api/v1/products/?limit=30"
+
+
+Query with numeric filters
+curl "http://localhost:3000/api/v1/products/?numericFilters=price>40,rating>=4&fields=name,price"
+
+
+
+
 
 Create a task
 POST 
